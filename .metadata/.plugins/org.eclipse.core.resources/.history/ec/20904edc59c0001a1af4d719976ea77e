@@ -1,0 +1,5 @@
+package com.alphacode.ppmtool.repositories;
+
+public interface ProjectRepository {
+
+}
