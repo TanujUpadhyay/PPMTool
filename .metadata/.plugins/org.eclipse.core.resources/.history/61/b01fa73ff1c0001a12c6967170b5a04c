@@ -31,16 +31,11 @@ public class ProjectService {
 		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
 
 		if (project == null) {
-			throw new ProjectIdException("Project Id '" + projectId + "' Dosn't exists");
+			throw new ProjectIdException(
+					"Project Id '" + project.getProjectIdentifier().toUpperCase() + "' Dosn't exists");
 		}
 
 		return project;
-	}
-
-	public Iterable<Project> findAllProjects() {
-
-		return projectRepository.findAll();
-
 	}
 
 }

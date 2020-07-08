@@ -26,21 +26,4 @@ public class ProjectService {
 
 	}
 
-	public Project findProjectByIdentifer(String projectId) {
-
-		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
-
-		if (project == null) {
-			throw new ProjectIdException("Project Id '" + projectId + "' Dosn't exists");
-		}
-
-		return project;
-	}
-
-	public Iterable<Project> findAllProjects() {
-
-		return projectRepository.findAll();
-
-	}
-
 }
