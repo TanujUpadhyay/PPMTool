@@ -1,0 +1,5 @@
+package com.alphacode.ppmtool.exceptions;
+
+public class ProjectIdExceptionResponese {
+
+}
