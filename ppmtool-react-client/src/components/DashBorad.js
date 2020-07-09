@@ -1,5 +1,6 @@
 import React from "react";
 import ProjectItem from "./Project/ProjectItem";
+import CreateProjectButton from "./Project/CreateProjectButton";
 
 function DashBoard() {
   return (
@@ -9,9 +10,9 @@ function DashBoard() {
           <div className="col-md-12">
             <h1 className="display-4 text-center">Projects</h1>
             <br />
-            <a href="ProjectForm.html" className="btn btn-lg btn-info">
-              Create a Project
-            </a>
+
+            <CreateProjectButton />
+
             <br />
             <hr />
           </div>
