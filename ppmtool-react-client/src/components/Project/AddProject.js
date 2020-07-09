@@ -1,12 +1,6 @@
 import React, { useState } from "react";
 
 const AddProject = () => {
-  //   const [projectName, setProjectName] = useState("");
-  //   const [, setProjectIdentifier] = useState("");
-  //   const [description, setDescription] = useState("");
-  //   const [startDate, setStartDate] = useState("");
-  //   const [endDate, setEndDate] = useState("");
-
   const [values, setValues] = useState({
     projectName: "",
     projectIdentifier: "",
