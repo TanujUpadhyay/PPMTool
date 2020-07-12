@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,6 +21,7 @@ import com.alphacode.ppmtool.services.ProjectService;
 
 @RestController
 @RequestMapping("api/project")
+@CrossOrigin
 public class ProjectController {
 
 	@Autowired
@@ -28,6 +30,7 @@ public class ProjectController {
 	@Autowired
 	private MapValidationErrorService mapValidationErrorServices;
 
+	// create
 	@PostMapping("")
 	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result) {
 
@@ -41,6 +44,7 @@ public class ProjectController {
 		return new ResponseEntity<Project>(project1, HttpStatus.CREATED);
 	}
 
+	// read one
 	@GetMapping("/{projectId}")
 	public ResponseEntity<?> getProjectById(@PathVariable String projectId) {
 		Project project = projectService.findProjectByIdentifer(projectId);
@@ -49,11 +53,13 @@ public class ProjectController {
 
 	}
 
+	// read all
 	@GetMapping("/all")
 	public Iterable<Project> getAllProjets() {
 		return projectService.findAllProjects();
 	}
 
+	// delete
 	@DeleteMapping("/{projectId}")
 	public ResponseEntity<?> deleteProject(@PathVariable String projectId) {
 		projectService.deleteProjectByIdentifier(projectId);
