@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import { getProject } from "../../actions/projectActions";
+import { getProject, createProject } from "../../actions/projectActions";
 import classnames from "classnames";
 
 class UpdateProject extends Component {
@@ -9,6 +9,7 @@ class UpdateProject extends Component {
     super();
 
     this.state = {
+      id: "",
       projectName: "",
       projectIdentifier: "",
       description: "",
@@ -23,6 +24,29 @@ class UpdateProject extends Component {
 
   //life cycle hhoks
 
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.errors) {
+      this.setState({ errors: nextProps.errors });
+    }
+    const {
+      id,
+      projectName,
+      projectIdentifier,
+      description,
+      start_date,
+      end_date,
+    } = nextProps.project;
+
+    this.setState({
+      id,
+      projectName,
+      projectIdentifier,
+      description,
+      start_date,
+      end_date,
+    });
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params;
     this.props.getProject(id, this.props.history);
@@ -34,14 +58,15 @@ class UpdateProject extends Component {
 
   onSubmit(e) {
     e.preventDefault();
-    const newProject = {
+    const updateProject = {
+      id: this.state.id,
       projectName: this.state.projectName,
       projectIdentifier: this.state.projectIdentifier,
       description: this.state.description,
       start_date: this.state.start_date,
       end_date: this.state.end_date,
     };
-    this.props.getProject(newProject, this.props.history);
+    this.props.createProject(updateProject, this.props.history);
   }
 
   render() {
@@ -83,6 +108,7 @@ class UpdateProject extends Component {
                       name="projectIdentifier"
                       value={this.state.projectIdentifier}
                       onChange={this.onChange}
+                      disabled
                     />
                     {errors.projectIdentifier && (
                       <div className="invalid-feedback">
@@ -144,6 +170,7 @@ class UpdateProject extends Component {
 UpdateProject.propTypes = {
   getProject: PropTypes.func.isRequired,
   project: PropTypes.object.isRequired,
+  createProject: PropTypes.func.isRequired,
   errors: PropTypes.object.isRequired,
 };
 
@@ -152,4 +179,6 @@ const mapStateToProps = (state) => ({
   errors: state.errors,
 });
 
-export default connect(mapStateToProps, { getProject })(UpdateProject);
+export default connect(mapStateToProps, { getProject, createProject })(
+  UpdateProject
+);
