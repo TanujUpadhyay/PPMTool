@@ -1,90 +1,226 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { createProject } from "../../actions/projectActions";
 
-const AddProject = () => {
-  const [values, setValues] = useState({
-    projectName: "",
-    projectIdentifier: "",
-    description: "",
-    start_date: "",
-    end_date: "",
-  });
+class AddProject extends Component {
+  constructor() {
+    super();
 
-  const onhandleChange = (name) => (event) => {
-    setValues({ ...values, [name]: event.target.value });
-  };
+    this.state = {
+      projectName: "",
+      projectIdentifier: "",
+      description: "",
+      start_date: "",
+      end_date: "",
+    };
 
-  const onSubmit = (e) => {
+    this.onChange = this.onChange.bind(this);
+    this.onSubmit = this.onSubmit.bind(this);
+  }
+
+  onChange(e) {
+    this.setState({ [e.target.name]: e.target.value });
+  }
+
+  onSubmit(e) {
     e.preventDefault();
-    const newProject = { ...values };
-    console.log(newProject);
-  };
+    const newProject = {
+      projectName: this.state.projectName,
+      projectIdentifier: this.state.projectIdentifier,
+      description: this.state.description,
+      start_date: this.state.start_date,
+      end_date: this.state.end_date,
+    };
+    this.props.createProject(newProject, this.props.history);
+  }
 
-  return (
-    <div className="project">
-      <div className="container">
-        <div className="row">
-          <div className="col-md-8 m-auto">
-            <h5 className="display-4 text-center">Create Project form</h5>
-            <hr />
-            <form onSubmit={onSubmit}>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control form-control-lg "
-                  placeholder="Project Name"
-                  name="projectName"
-                  value={values.projectName}
-                  onChange={onhandleChange("projectName")}
-                />
-              </div>
-              <div className="form-group">
-                <input
-                  type="text"
-                  className="form-control form-control-lg"
-                  placeholder="Unique Project ID"
-                  name="projectIdentifier"
-                  value={values.projectIdentifier}
-                  onChange={onhandleChange("projectIdentifier")}
-                />
-              </div>
+  render() {
+    return (
+      <div>
+        {
+          //check name attribute input fields
+          //create constructor
+          //set state
+          //set value on input fields
+          //create onChange function
+          //set onChange on each input field
+          //bind on constructor
+          //check state change in the react extension
+        }
 
-              <div className="form-group">
-                <textarea
-                  className="form-control form-control-lg"
-                  placeholder="Project Description"
-                  name="description"
-                  value={values.description}
-                  onChange={onhandleChange("description")}
-                ></textarea>
-              </div>
-              <h6>Start Date</h6>
-              <div className="form-group">
-                <input
-                  type="date"
-                  className="form-control form-control-lg"
-                  name="start_date"
-                  value={values.start_date}
-                  onChange={onhandleChange("start_date")}
-                />
-              </div>
-              <h6>Estimated End Date</h6>
-              <div className="form-group">
-                <input
-                  type="date"
-                  className="form-control form-control-lg"
-                  name="end_date"
-                  value={values.end_date}
-                  onChange={onhandleChange("end_date")}
-                />
-              </div>
+        <div className="project">
+          <div className="container">
+            <div className="row">
+              <div className="col-md-8 m-auto">
+                <h5 className="display-4 text-center">Create Project form</h5>
+                <hr />
+                <form onSubmit={this.onSubmit}>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg "
+                      placeholder="Project Name"
+                      name="projectName"
+                      value={this.state.projectName}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <input
+                      type="text"
+                      className="form-control form-control-lg"
+                      placeholder="Unique Project ID"
+                      name="projectIdentifier"
+                      value={this.state.projectIdentifier}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <div className="form-group">
+                    <textarea
+                      className="form-control form-control-lg"
+                      placeholder="Project Description"
+                      name="description"
+                      value={this.state.description}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <h6>Start Date</h6>
+                  <div className="form-group">
+                    <input
+                      type="date"
+                      className="form-control form-control-lg"
+                      name="start_date"
+                      value={this.state.start_date}
+                      onChange={this.onChange}
+                    />
+                  </div>
+                  <h6>Estimated End Date</h6>
+                  <div className="form-group">
+                    <input
+                      type="date"
+                      className="form-control form-control-lg"
+                      name="end_date"
+                      value={this.state.end_date}
+                      onChange={this.onChange}
+                    />
+                  </div>
 
-              <input type="submit" className="btn btn-primary btn-block mt-4" />
-            </form>
+                  <input
+                    type="submit"
+                    className="btn btn-primary btn-block mt-4"
+                  />
+                </form>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
+}
+
+AddProject.propTypes = {
+  createProject: PropTypes.func.isRequired,
 };
 
-export default AddProject;
+export default connect(null, { createProject })(AddProject);
+
+// import React, { useState } from "react";
+// import PropTypes from "prop-types";
+// import { connect } from "react-redux";
+// import { createProject } from "../../actions/projectActions";
+
+// const AddProject = (props) => {
+//   const [values, setValues] = useState({
+//     projectName: "",
+//     projectIdentifier: "",
+//     description: "",
+//     start_date: "",
+//     end_date: "",
+//   });
+
+//   const onhandleChange = (name) => (event) => {
+//     setValues({ ...values, [name]: event.target.value });
+//   };
+
+//   const onSubmit = (e) => {
+//     e.preventDefault();
+//     const newProject = { ...values };
+//     console.log(newProject);
+//     this.props.createProject(newProject, history);
+//   };
+
+//   return (
+//     <div className="project">
+//       <div className="container">
+//         <div className="row">
+//           <div className="col-md-8 m-auto">
+//             <h5 className="display-4 text-center">Create Project form</h5>
+//             <hr />
+//             <form onSubmit={onSubmit}>
+//               <div className="form-group">
+//                 <input
+//                   type="text"
+//                   className="form-control form-control-lg "
+//                   placeholder="Project Name"
+//                   name="projectName"
+//                   value={values.projectName}
+//                   onChange={onhandleChange("projectName")}
+//                 />
+//               </div>
+//               <div className="form-group">
+//                 <input
+//                   type="text"
+//                   className="form-control form-control-lg"
+//                   placeholder="Unique Project ID"
+//                   name="projectIdentifier"
+//                   value={values.projectIdentifier}
+//                   onChange={onhandleChange("projectIdentifier")}
+//                 />
+//               </div>
+
+//               <div className="form-group">
+//                 <textarea
+//                   className="form-control form-control-lg"
+//                   placeholder="Project Description"
+//                   name="description"
+//                   value={values.description}
+//                   onChange={onhandleChange("description")}
+//                 ></textarea>
+//               </div>
+//               <h6>Start Date</h6>
+//               <div className="form-group">
+//                 <input
+//                   type="date"
+//                   className="form-control form-control-lg"
+//                   name="start_date"
+//                   value={values.start_date}
+//                   onChange={onhandleChange("start_date")}
+//                 />
+//               </div>
+//               <h6>Estimated End Date</h6>
+//               <div className="form-group">
+//                 <input
+//                   type="date"
+//                   className="form-control form-control-lg"
+//                   name="end_date"
+//                   value={values.end_date}
+//                   onChange={onhandleChange("end_date")}
+//                 />
+//               </div>
+
+//               <input type="submit" className="btn btn-primary btn-block mt-4" />
+//             </form>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// AddProject.propTypes = {
+//   createProject: PropTypes.func.isRequired,
+// };
+
+// export default connect(null, { createProject })(AddProject);
