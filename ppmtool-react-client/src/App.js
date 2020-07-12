@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import DashBoard from "./components/DashBorad";
 import Header from "./components/Layout/Header";
@@ -15,7 +14,7 @@ function App() {
       <Router>
         <div className="App">
           <Header />
-          <Route path="/dashboard" component={DashBoard} exact />
+          <Route path="/dashboard" component={DashBoard} />
           <Route path="/addProject" component={AddProject} exact />
         </div>
       </Router>
