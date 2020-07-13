@@ -2,14 +2,20 @@ package com.alphacode.ppmtool.domain;
 
 import java.util.Date;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.PrePersist;
 import javax.persistence.PreUpdate;
 import javax.validation.constraints.NotBlank;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
 public class ProjectTask {
@@ -33,6 +39,12 @@ public class ProjectTask {
 	private Date dueDate;
 	
 	//ManyToOne with backlog
+	
+	@ManyToOne(fetch = FetchType.EAGER , cascade = CascadeType.REFRESH)
+	@JoinColumn(name="backlog_id",updatable = false,nullable = false)
+	@JsonIgnore
+	private Backlog backlog;
+	
 	@Column(updatable = false)
 	private String projectIdentifier;
 	
@@ -135,6 +147,16 @@ public class ProjectTask {
 
 	public void setUpate_At(Date upate_At) {
 		this.upate_At = upate_At;
+	}
+	
+	
+
+	public Backlog getBacklog() {
+		return backlog;
+	}
+
+	public void setBacklog(Backlog backlog) {
+		this.backlog = backlog;
 	}
 
 	@Override
