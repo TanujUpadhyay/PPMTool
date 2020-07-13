@@ -1,5 +1,7 @@
 package com.alphacode.ppmtool.services;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -33,14 +35,16 @@ public class ProjectTaskService {
 		// update the BL SEQUENCE 
 		BacklogSequence++;
 		
+		backlog.setPTSeqence(BacklogSequence);
+		
 		//Add SEQUENCE to project task
 		projectTask.setProjectSequence(projectIdentifier+"-"+BacklogSequence);
 		projectTask.setProjectIdentifier(projectIdentifier);
 		
 		//INITIAL priority
-//		if(projectTask.getPririty()==0 || projectTask.getPririty()==null) {
-//			projectTask.setPririty(3);
-//		}
+		if(projectTask.getPririty()==null) {
+			projectTask.setPririty(3);
+		}
 		
 		//INITIAL status when status is null
 		if(projectTask.getStatus()=="" || projectTask.getStatus()==null) {
@@ -49,6 +53,11 @@ public class ProjectTaskService {
 		}
 		
 		return projectTaskRepository.save(projectTask);
+	}
+
+	public Iterable<ProjectTask> findBackLogById(String backlog_id) {
+
+		return projectTaskRepository.findByProjectIdentifierOrderByPriority(backlog_id);
 	}
 	
 }

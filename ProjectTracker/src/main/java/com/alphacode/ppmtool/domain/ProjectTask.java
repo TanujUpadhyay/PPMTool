@@ -34,7 +34,8 @@ public class ProjectTask {
 	
 	private String status;
 	
-	private Integer pririty;
+	private Integer priority;
+	
 	
 	private Date dueDate;
 	
@@ -110,11 +111,11 @@ public class ProjectTask {
 	}
 
 	public Integer getPririty() {
-		return pririty;
+		return priority;
 	}
 
 	public void setPririty(Integer pririty) {
-		this.pririty = pririty;
+		this.priority = pririty;
 	}
 
 	public Date getDueDate() {
@@ -162,7 +163,7 @@ public class ProjectTask {
 	@Override
 	public String toString() {
 		return "ProjectTask [id=" + id + ", projectSequence=" + projectSequence + ", summary=" + summary
-				+ ", acceptanceCriterial=" + acceptanceCriterial + ", status=" + status + ", pririty=" + pririty
+				+ ", acceptanceCriterial=" + acceptanceCriterial + ", status=" + status + ", pririty=" + priority
 				+ ", dueDate=" + dueDate + ", projectIdentifier=" + projectIdentifier + ", create_At=" + create_At
 				+ ", upate_At=" + upate_At + "]";
 	}
