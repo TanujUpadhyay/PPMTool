@@ -1,7 +1,5 @@
 package com.alphacode.ppmtool.web;
 
-import java.util.List;
-
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,10 +36,10 @@ public class BacklogController {
 			@PathVariable String backlog_id
 			)
 	{
-		ResponseEntity<?> erroMap = mapValidation.MapValidationService(result);
-		
-		if(erroMap!=null) {
-			return erroMap;
+		ResponseEntity<?> errorMap = mapValidation.MapValidationService(result);
+	
+		if(errorMap!=null) {
+			return errorMap;
 		}
 		
 		ProjectTask projectTask1 = projectTaskService.addProjectTask(backlog_id,projectTask);

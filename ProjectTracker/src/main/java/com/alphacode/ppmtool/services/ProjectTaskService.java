@@ -1,13 +1,14 @@
 package com.alphacode.ppmtool.services;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.alphacode.ppmtool.domain.Backlog;
+import com.alphacode.ppmtool.domain.Project;
 import com.alphacode.ppmtool.domain.ProjectTask;
+import com.alphacode.ppmtool.exceptions.ProjectNotFoundException;
 import com.alphacode.ppmtool.repositories.BacklogRepository;
+import com.alphacode.ppmtool.repositories.ProjectRepository;
 import com.alphacode.ppmtool.repositories.ProjectTaskRepository;
 
 @Service
@@ -19,9 +20,13 @@ public class ProjectTaskService {
 	@Autowired
 	private ProjectTaskRepository projectTaskRepository;
 	
+	@Autowired
+	private ProjectRepository projectRepository;
+	
 	public ProjectTask addProjectTask(String projectIdentifier , ProjectTask projectTask) {
 		
 		//Exceptions : project not found
+		try {
 		
 		// PTs to be added to a specific project , project !=null
 		Backlog backlog = backlogRepository.findByProjectIdentifier(projectIdentifier);
@@ -53,10 +58,21 @@ public class ProjectTaskService {
 		}
 		
 		return projectTaskRepository.save(projectTask);
+		
+		}
+		catch (Exception e) {
+			throw new ProjectNotFoundException("Project not Found");
+		}
 	}
 
 	public Iterable<ProjectTask> findBackLogById(String backlog_id) {
-
+		
+		Project project = projectRepository.findByProjectIdentifier(backlog_id);
+		if(project==null)
+		{
+			throw new ProjectNotFoundException("Project with ID : '"+backlog_id+"' does not exit!! ");
+		}
+		
 		return projectTaskRepository.findByProjectIdentifierOrderByPriority(backlog_id);
 	}
 	
