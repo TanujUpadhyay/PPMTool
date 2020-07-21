@@ -8,4 +8,6 @@ import com.alphacode.ppmtool.domain.User;
 @Repository
 public interface UserRepositiry extends CrudRepository<User, Long> {
 	
+	User  findByUsername(String username);
+	User getById(Long id);
 }
