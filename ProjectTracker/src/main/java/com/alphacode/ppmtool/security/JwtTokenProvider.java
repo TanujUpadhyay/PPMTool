@@ -9,8 +9,13 @@ import org.springframework.stereotype.Component;
 
 import com.alphacode.ppmtool.domain.User;
 
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.MalformedJwtException;
 import io.jsonwebtoken.SignatureAlgorithm;
+import io.jsonwebtoken.SignatureException;
+import io.jsonwebtoken.UnsupportedJwtException;
 
 import static com.alphacode.ppmtool.security.SecurityConstants.EXPIRATION_TTIME;
 import static com.alphacode.ppmtool.security.SecurityConstants.SECRET;
@@ -49,6 +54,48 @@ public class JwtTokenProvider {
 	}
 	
 	//validate the token
+	public boolean validateToken(String token)
+	{
+		try {
+			Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token);
+			return true;
+		} catch (SignatureException e) {
+			System.out.println("Invalid jwt signature");
+		}
+		catch (MalformedJwtException e) {
+			System.out.println("Invalid jwt signature");
+		}
+		catch (ExpiredJwtException e) {
+			System.out.println("Expired jwt signature");
+		}
+		catch (UnsupportedJwtException e) {
+			System.out.println("unsupported jwt signature");
+		}
+		catch (IllegalArgumentException e) {
+			System.out.println("Jwt claims string is empty");
+		}
+		
+		return false;
+	}
+	
 	
 	//get user d from token
+	
+	public Long getUserIdFromTOken(String token)
+	{
+		Claims claims = Jwts.parser().setSigningKey(SECRET).parseClaimsJws(token).getBody();
+		String id = (String)claims.get("id");
+		return Long.parseLong(id);
+	}
+	
 }
+
+
+
+
+
+
+
+
+
+

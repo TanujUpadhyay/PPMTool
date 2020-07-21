@@ -1,5 +1,7 @@
 package com.alphacode.ppmtool.web;
 
+import java.security.Principal;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +34,10 @@ public class ProjectController {
 
 	// create
 	@PostMapping("")
-	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, BindingResult result) {
+	public ResponseEntity<?> createNewProject(@Valid @RequestBody Project project, 
+			BindingResult result,
+			Principal principal
+			) {
 
 		ResponseEntity<?> errorMap = mapValidationErrorServices.MapValidationService(result);
 
@@ -40,7 +45,7 @@ public class ProjectController {
 			return errorMap;
 		}
 
-		Project project1 = projectService.saveOrUpdateProject(project);
+		Project project1 = projectService.saveOrUpdateProject(project,principal.getName());
 		return new ResponseEntity<Project>(project1, HttpStatus.CREATED);
 	}
 
