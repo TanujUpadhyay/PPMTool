@@ -5,6 +5,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import com.alphacode.ppmtool.domain.User;
+import com.alphacode.ppmtool.exceptions.UsernameAllreadyExistsException;
 import com.alphacode.ppmtool.repositories.UserRepositiry;
 
 @Service
@@ -17,10 +18,15 @@ public class UserService {
 	private BCryptPasswordEncoder bCryptPasswordEncoder;
 	
 	public User saveUser(User newUser) {
-		newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
-		//Username has to be unique
-			//make sure that paswword abd confirmpassword match
-		return userRepositiry.save(newUser);
+		try {
+			newUser.setPassword(bCryptPasswordEncoder.encode(newUser.getPassword()));
+			newUser.setUsername(newUser.getUsername());
+			newUser.setConfirmPassword("");
+			return userRepositiry.save(newUser);
+		} catch (Exception e) {
+			throw new UsernameAllreadyExistsException("Username '"+newUser.getUsername()+"' already exists!!");
+		}
+		
 	}
 	
 	

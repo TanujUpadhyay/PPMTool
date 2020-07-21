@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.alphacode.ppmtool.domain.User;
 import com.alphacode.ppmtool.services.MapValidationErrorService;
 import com.alphacode.ppmtool.services.UserService;
+import com.alphacode.ppmtool.validator.UserValidator;
 
 @RestController
 @RequestMapping("/api/users")
@@ -25,9 +26,14 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
+	@Autowired
+	private UserValidator userValidater;
+	
 	@PostMapping("/register")
 	public ResponseEntity<?> registerUser(@Valid @RequestBody User user ,BindingResult result)
 	{
+		userValidater.validate(user,result);
+		
 		ResponseEntity<?> errorMap = mapValidation.MapValidationService(result);
 		if(errorMap!=null) {
 			return errorMap;
