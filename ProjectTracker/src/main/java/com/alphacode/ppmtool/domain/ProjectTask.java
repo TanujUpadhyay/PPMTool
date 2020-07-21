@@ -52,7 +52,7 @@ public class ProjectTask {
 	
 	private Date create_At;
 	
-	private Date upate_At;
+	private Date update_At;
 	
 	@PrePersist
 	protected void onCreate() {
@@ -61,7 +61,7 @@ public class ProjectTask {
 	
 	@PreUpdate
 	protected void onUpdate() {
-		this.upate_At = new Date();
+		this.update_At = new Date();
 	}
 	
 	
@@ -141,12 +141,12 @@ public class ProjectTask {
 		this.create_At = create_At;
 	}
 
-	public Date getUpate_At() {
-		return upate_At;
+	public Date getUpdate_At() {
+		return update_At;
 	}
 
-	public void setUpate_At(Date upate_At) {
-		this.upate_At = upate_At;
+	public void setUpdate_At(Date update_At) {
+		this.update_At = update_At;
 	}
 	
 	
@@ -164,7 +164,7 @@ public class ProjectTask {
 		return "ProjectTask [id=" + id + ", projectSequence=" + projectSequence + ", summary=" + summary
 				+ ", acceptanceCriterial=" + acceptanceCriterial + ", status=" + status + ", pririty=" + priority
 				+ ", dueDate=" + dueDate + ", projectIdentifier=" + projectIdentifier + ", create_At=" + create_At
-				+ ", upate_At=" + upate_At + "]";
+				+ ", update_At=" + update_At + "]";
 	}
 	
 
