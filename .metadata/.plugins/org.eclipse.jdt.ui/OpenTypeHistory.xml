@@ -1,8 +1,2 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<typeInfoHistroy>
-<typeInfo handle="=ProjectTracker/C:\/Users\/Acer\/.m2\/repository\/org\/springframework\/data\/spring-data-commons\/2.3.1.RELEASE\/spring-data-commons-2.3.1.RELEASE.jar&lt;org.springframework.data.repository(CrudRepository.class[CrudRepository" modifiers="1537" timestamp="1594103222516"/>
-<typeInfo handle="=ProjectTracker/C:\/Users\/Acer\/.m2\/repository\/org\/springframework\/data\/spring-data-jpa\/2.3.1.RELEASE\/spring-data-jpa-2.3.1.RELEASE.jar&lt;org.springframework.data.jpa.repository.support(CrudMethodMetadata.class[CrudMethodMetadata" modifiers="1537" timestamp="1594103221316"/>
-<typeInfo handle="=ProjectTracker/C:\/Users\/Acer\/.m2\/repository\/jakarta\/validation\/jakarta.validation-api\/2.0.2\/jakarta.validation-api-2.0.2.jar&lt;javax.validation(Validator.class[Validator" modifiers="1537" timestamp="1588275397682"/>
-<typeInfo handle="=ProjectTracker/C:\/Users\/Acer\/.m2\/repository\/org\/springframework\/security\/spring-security-core\/5.3.3.RELEASE\/spring-security-core-5.3.3.RELEASE.jar&lt;org.springframework.security.core.userdetails(UserDetails.class[UserDetails" modifiers="1537" timestamp="1595297394167"/>
-<typeInfo handle="=ProjectTracker/C:\/Users\/Acer\/.m2\/repository\/org\/springframework\/spring-web\/5.2.7.RELEASE\/spring-web-5.2.7.RELEASE.jar&lt;org.springframework.web.filter(OncePerRequestFilter.class[OncePerRequestFilter" modifiers="1057" timestamp="1594103256698"/>
-</typeInfoHistroy>
+<typeInfoHistroy/>

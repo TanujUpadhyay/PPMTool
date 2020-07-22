@@ -7,6 +7,7 @@ import com.alphacode.ppmtool.domain.Backlog;
 import com.alphacode.ppmtool.domain.Project;
 import com.alphacode.ppmtool.domain.User;
 import com.alphacode.ppmtool.exceptions.ProjectIdException;
+import com.alphacode.ppmtool.exceptions.ProjectNotFoundException;
 import com.alphacode.ppmtool.repositories.BacklogRepository;
 import com.alphacode.ppmtool.repositories.ProjectRepository;
 import com.alphacode.ppmtool.repositories.UserRepositiry;
@@ -53,7 +54,7 @@ public class ProjectService {
 
 	}
 
-	public Project findProjectByIdentifer(String projectId) {
+	public Project findProjectByIdentifer(String projectId,String username) {
 
 		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
 
@@ -61,23 +62,24 @@ public class ProjectService {
 			throw new ProjectIdException("Project Id '" + projectId + "' Dosn't exists");
 		}
 
+		if(!project.getProjectLeader().equals(username))
+		{
+			throw new ProjectNotFoundException("Project not found in your account");
+		}
+		
+		
 		return project;
 	}
 
-	public Iterable<Project> findAllProjects() {
+	public Iterable<Project> findAllProjects(String username) {
 
-		return projectRepository.findAll();
+		return projectRepository.findByProjectLeader(username);
 
 	}
 
-	public void deleteProjectByIdentifier(String projectId) {
-		Project project = projectRepository.findByProjectIdentifier(projectId.toUpperCase());
-		if (project == null) {
-			throw new ProjectIdException(
-					"can not delete  Project with Id '" + projectId + "' This prject Dosn't exists");
-		}
+	public void deleteProjectByIdentifier(String projectId,String username) {
 
-		projectRepository.delete(project);
+		projectRepository.delete(findProjectByIdentifer(projectId,username));
 	}
 
 }
