@@ -37,7 +37,7 @@ public class User implements UserDetails{
 	private String username;
 	
 	@NotBlank(message = "Please enter your full name")
-	private String FullName;
+	private String fullName;
 	
 	@NotBlank(message = "Password field is requirde")
 	private String password;
@@ -85,11 +85,11 @@ public class User implements UserDetails{
 	}
 
 	public String getFullName() {
-		return FullName;
+		return fullName;
 	}
 
 	public void setFullName(String fullName) {
-		FullName = fullName;
+		this.fullName = fullName;
 	}
 
 	public String getPassword() {
