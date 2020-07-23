@@ -1,0 +1,248 @@
+[33mcommit aa68c7374706d4b1d17e5537a19a6ee89e3046ac[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 22 12:55:45 2020 +0530
+
+    mering branch10
+
+[33mcommit 6e147741d53928e23149fee4a8d25def8779b3df[m[33m ([m[1;32mbranch8[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 15 11:50:24 2020 +0530
+
+    done with this brachn
+
+[33mcommit 282e3c4641ac17ab78c6271c1e463ba966ac2282[m[33m ([m[1;31morigin/branch8[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 15 11:43:33 2020 +0530
+
+    done with crud in the project task and backlog now moving to frontend
+
+[33mcommit 372daee18aeb540bac93ce35ac43307dccc01dbd[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 15 09:49:16 2020 +0530
+
+    Adding update project task function and some more things works fine
+
+[33mcommit 094f519fa9a277ec893d56e2ecf90ca0cd82bc72[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 15 08:48:09 2020 +0530
+
+    handling some exceptions and make code more good to work
+
+[33mcommit 4516bbb9bce9df1b24dcf1e3e28c9ac0efb634cd[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 14:32:52 2020 +0530
+
+    Adding real databse removing h2 data
+
+[33mcommit f0d4281b542454c2cd2403d8b0054ebc36b487fa[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 13:10:39 2020 +0530
+
+    adding get and post for tasks
+
+[33mcommit 024e4080c50da15ec28916e72c4648b72b4b1ecd[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 12:37:23 2020 +0530
+
+    adding service layer and controllers in the spring for task
+
+[33mcommit a1e9a2f7100e3df6af9970404697cb6cf149b7f8[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 11:50:02 2020 +0530
+
+    adding relastion btw backlogs and tasks
+
+[33mcommit 56a4cf2d6db2552201944796029abc5b97a3f2dd[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 11:19:30 2020 +0530
+
+    adding relastion btw project and backlog
+
+[33mcommit aaf12acab07e83520d549df9390de6fd1e5c6c9b[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Mon Jul 13 10:49:24 2020 +0530
+
+    adding backlog and projecttraker pojo and repo in spring boot app
+
+[33mcommit cd5dd2ef49077bbd9baf312568c657e5f615bd3f[m[33m ([m[1;31morigin/branch7[m[33m, [m[1;32mbranch7[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 15:52:50 2020 +0530
+
+    done with this brnach all are working fine CRUD done]
+
+[33mcommit e66fbf985330cfd5d58d091cbc2d899a20605ddb[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 15:35:41 2020 +0530
+
+    Adding deleteproject feacter and handling state for that
+
+[33mcommit 56c470c6a7cb99c64ad909a33e6303be16d3a793[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 14:05:55 2020 +0530
+
+    Adding update from and handling state for that
+
+[33mcommit 4902adbff706031b0b5e6a35f38c471efaa93787[m
+Merge: 2fc1393 92c2b03
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 13:09:55 2020 +0530
+
+    Merge branch 'branch6'
+
+[33mcommit 2fc13938d28bfe97b3b90fb5f1414648a24d5d70[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 13:09:52 2020 +0530
+
+    merging branch6
+
+[33mcommit 92c2b035661971235475f5ad3d289b5fe5ea84d7[m[33m ([m[1;31morigin/branch6[m[33m, [m[1;32mbranch6[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 13:05:26 2020 +0530
+
+    done with this branch now merging this to master
+
+[33mcommit ca5617f5626d6f2f72e0fd0d50a9f327e26e8394[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 12:59:01 2020 +0530
+
+    displaying all project in dashboard and eveythings works fine now
+
+[33mcommit 3a2bfd193551532a0a6ea14f2fdd19c4a63f451d[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 10:52:00 2020 +0530
+
+    adding error validation in our form
+
+[33mcommit 104a212c7f30cb7f3f39034dca95f008fe0031d6[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Sun Jul 12 10:00:31 2020 +0530
+
+    changing code in addproject and making some reducers to handle state and connecting to spring backend
+
+[33mcommit a7754246dd5dd5a56d1cf900804e249347f9c7d2[m[33m ([m[1;31morigin/branch5[m[33m, [m[1;32mbranch5[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Thu Jul 9 12:05:49 2020 +0530
+
+    now moving to redux part
+
+[33mcommit 6240e387d3696c6cca2b17b1b6f9c00d2a370caf[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Thu Jul 9 11:48:50 2020 +0530
+
+    adding create-new-project form and making the states using useState works fine now we adding backend api to react
+
+[33mcommit 923994364f8a5fb2463d3a4a2a42d612eb8a2bfb[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Thu Jul 9 10:28:11 2020 +0530
+
+    adding dashboard and projectiteam components and also adding bootstrap , fontawsome
+
+[33mcommit f1a21d8785790b3094ecea2d3edf72314728569a[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Thu Jul 9 09:31:19 2020 +0530
+
+    Creating react project and make first comopent
+
+[33mcommit 4418ebb1711868e893f84fc21ebe2b4f0b0697b1[m[33m ([m[1;31morigin/branch4[m[33m, [m[1;32mbranch4[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 20:35:05 2020 +0530
+
+    done with CRUD now moving to react
+
+[33mcommit b05bc02556ffd442e22dcb9b6f179dd8d123baec[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 20:33:38 2020 +0530
+
+    adding delete and some other code refactring
+
+[33mcommit 19be832f25335cc25141fd1eebd743a863504566[m[33m ([m[1;31morigin/branch3[m[33m, [m[1;32mbranch3[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 13:42:16 2020 +0530
+
+    Adding find all method and every things working fine
+
+[33mcommit c1dae6c01ca5c618089616ddf9df262a48374db1[m
+Merge: d322eda 0bed416
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 12:56:15 2020 +0530
+
+    Merge branch 'branch2'
+
+[33mcommit d322eda31d19b221d947b13cf686e12cba17b7b2[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 12:56:02 2020 +0530
+
+    mergeing branch2
+
+[33mcommit 0bed416377e867f24b51ef5e1080cd0fbcaa95c7[m[33m ([m[1;31morigin/branch2[m[33m, [m[1;32mbranch2[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 12:54:33 2020 +0530
+
+    done
+
+[33mcommit b70df0169379555c41a6a0d7a441da8d5735c886[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 12:53:21 2020 +0530
+
+    validation done and exceptions done
+
+[33mcommit b18cfc14e9ee7c01cd0ec4601b7dd735d866ca3a[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 12:49:41 2020 +0530
+
+    adding custome exception and handling exception in json formate
+
+[33mcommit 5161ae9452cafa106a395f745d0125cafabf1a13[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 11:31:43 2020 +0530
+
+    refactering some validatin code
+
+[33mcommit 7c27ad688feb8d15b22c82a5dcc965e9a563adcd[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Wed Jul 8 11:16:48 2020 +0530
+
+    Validation part is done validation is working
+
+[33mcommit b44af7ec2ced8bb7e3e07bbdb11c6163c117569a[m
+Merge: 28ce42d 0f8f075
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 20:28:49 2020 +0530
+
+    Merge branch 'branch1'
+
+[33mcommit 28ce42d494e25bea6434520b1ac9716fa62c519b[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 20:28:44 2020 +0530
+
+    merging
+
+[33mcommit 0f8f0755b503402733c78e07689bf0a05a1ee540[m[33m ([m[1;31morigin/branch1[m[33m, [m[1;32mbranch1[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 20:25:20 2020 +0530
+
+    done with this branch
+
+[33mcommit 2b9f4da19800089296b8aa74e3615837c76fad02[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 20:21:51 2020 +0530
+
+    adding project pojo nand implementing repositry and services layer and works fine
+
+[33mcommit d3c11bbba2f6a066d16c60f9e9346fe25a6a4ead[m[33m ([m[1;31morigin/branch0[m[33m, [m[1;32mbranch0[m[33m)[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 12:19:44 2020 +0530
+
+    brachn tested
+
+[33mcommit f06505ef0f08fe0f046327650c473d57638cd882[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 12:13:24 2020 +0530
+
+    Project object
+
+[33mcommit cc57cd1008f24628d1bb448f8110c3edf8fe34ff[m
+Author: Tanuj upadhyay <upadhyaytanuj123@gmail.com>
+Date:   Tue Jul 7 12:05:02 2020 +0530
+
+    First commit
