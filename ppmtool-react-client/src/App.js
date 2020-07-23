@@ -8,6 +8,9 @@ import AddProject from "./components/Project/AddProject";
 import { Provider } from "react-redux";
 import store from "./store";
 import UpdateProject from "./components/Project/UpdateProject";
+import Landing from "./components/Layout/Landing";
+import Register from "./components/UserManagment/Register";
+import Login from "./components/UserManagment/Login";
 
 function App() {
   return (
@@ -16,11 +19,24 @@ function App() {
         <div className="App">
           <Header />
 
-          <Route path="/dashboard" component={DashBoard} exact />
+          {
+            //Public Routes
+          }
+          <Route exact path="/" component={Landing} />
 
-          <Route path="/addProject" component={AddProject} exact />
+          <Route exact path="/register" component={Register} />
 
-          <Route path="/updateProject/:id" component={UpdateProject} exact />
+          <Route exact path="/login" component={Login} />
+
+          {
+            // Private Routes
+          }
+
+          <Route exact path="/dashboard" component={DashBoard} />
+
+          <Route exact path="/addProject" component={AddProject} />
+
+          <Route exact path="/updateProject/:id" component={UpdateProject} />
         </div>
       </Router>
     </Provider>
