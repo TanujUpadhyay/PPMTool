@@ -16,11 +16,10 @@ class UpdateProjectTask extends Component {
       id: "",
       projectSequence: "",
       summary: "",
-      acceptanceCriteria: "",
+      acceptanceCriterial: "",
       status: "",
       priority: "",
       dueDate: "",
-      projectIdentifier: "",
       create_At: "",
       errors: {},
     };
@@ -42,7 +41,7 @@ class UpdateProjectTask extends Component {
       id,
       projectSequence,
       summary,
-      acceptanceCriteria,
+      acceptanceCriterial,
       status,
       priority,
       dueDate,
@@ -54,7 +53,7 @@ class UpdateProjectTask extends Component {
       id,
       projectSequence,
       summary,
-      acceptanceCriteria,
+      acceptanceCriterial,
       status,
       priority,
       dueDate,
@@ -74,7 +73,7 @@ class UpdateProjectTask extends Component {
       id: this.state.id,
       projectSequence: this.state.projectSequence,
       summary: this.state.summary,
-      acceptanceCriteria: this.state.acceptanceCriteria,
+      acceptanceCriterial: this.state.acceptanceCriterial,
       status: this.state.status,
       priority: this.state.priority,
       dueDate: this.state.dueDate,
@@ -129,8 +128,8 @@ class UpdateProjectTask extends Component {
                   <textarea
                     className="form-control form-control-lg"
                     placeholder="Acceptance Criteria"
-                    name="acceptanceCriteria"
-                    value={this.state.acceptanceCriteria}
+                    name="acceptanceCriterial"
+                    value={this.state.acceptanceCriterial}
                     onChange={this.onChange}
                   />
                 </div>
