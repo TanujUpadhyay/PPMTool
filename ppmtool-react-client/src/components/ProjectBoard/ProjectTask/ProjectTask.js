@@ -58,6 +58,9 @@ class ProjectTask extends Component {
             Delete
           </button>
         </div>
+        <p className="card-text p-1 ml-2">
+          Last update : {project_task.update_At}
+        </p>
       </div>
     );
   }

@@ -50,9 +50,10 @@ public class ProjectTask {
 	private String projectIdentifier;
 	
 	
-	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date create_At;
 	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date update_At;
 	
 	@PrePersist
