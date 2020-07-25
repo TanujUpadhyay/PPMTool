@@ -22,6 +22,7 @@ import javax.validation.constraints.NotBlank;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
@@ -37,7 +38,7 @@ public class User implements UserDetails{
 	private String username;
 	
 	@NotBlank(message = "Please enter your full name")
-	private String FullName;
+	private String fullName;
 	
 	@NotBlank(message = "Password field is requirde")
 	private String password;
@@ -45,7 +46,10 @@ public class User implements UserDetails{
 	@Transient
 	private String confirmPassword;
 	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date create_At;
+	
+	@JsonFormat(pattern = "yyyy-mm-dd")
 	private Date update_At;
 	
 	//OneToMany with Project
@@ -85,11 +89,11 @@ public class User implements UserDetails{
 	}
 
 	public String getFullName() {
-		return FullName;
+		return fullName;
 	}
 
 	public void setFullName(String fullName) {
-		FullName = fullName;
+		this.fullName = fullName;
 	}
 
 	public String getPassword() {
